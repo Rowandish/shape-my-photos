@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^photos([0-9]+)$ /mobile/showMyShape.php?id=$1r [L]
+RewriteRule ^photos([0-9]+r[0-9]+)$ /mobile/showMyShape.php?id=$1 [L]
+</IfModule>

@@ -1,0 +1,4 @@
+<Directory  ~ "/app/www/php">
+  Order allow,deny
+  Deny from all
+</Directory>

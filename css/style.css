@@ -1,0 +1,240 @@
+/*-----------------------------------------------------GENERAL-----------------------------------------------------*/
+body
+{
+	font-size:15px;
+	color: rgb(80,80,80);
+	background-color: white;
+	font-family:"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	min-height: 650px;
+}	
+
+img,body,table
+{
+	margin:0;
+	padding:0;
+	border:0;
+
+}
+table, tr, td
+{
+	vertical-align:top;
+}
+
+/*-----------------------------------------------------LOGIN PAGE-----------------------------------------------------*/
+
+.fb-like {width: 350px !important; overflow: hidden !important; display: inline-block !important; }
+#fb-root { z-index: 11;}
+
+@media \0screen {img { height: auto;width:auto }} /* Prevent height distortion in IE8. */
+#tot, #up, #middle, #down{width: 100%;}
+#tot{position:absolute; z-index:1;top:30px; left:0;}
+.firstPage{height: 620px;}
+#up{position:relative;height: 174px}
+
+#middle{height: 427px; text-align:center;}
+#middle div {width: 500px; margin: auto;}
+
+#socialTag {position: absolute; width: 40%; top: 0; right: 0; z-index: 5;}
+#social {text-align: right; margin-right: 10px; height: 24px; overflow: hidden;}
+
+#titleHidden {position:absolute;width:100%; height:100%; top:0; left:0; text-align:center; z-index:-2;}
+#titleHidden img {height: 350px;}
+
+#title {position:absolute;width:100%; height:100%; top:0; left:0; text-align:center; z-index:-1;}
+#title img {height: 350px;}
+
+.loadingShape {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color: azure;
+	z-index: 9999;
+}
+.loadingShape div {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-172px;
+	margin-top: -84px;
+}
+
+#start {
+-webkit-box-shadow: 3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-box-shadow:    3px 3px 11px rgba(50, 50, 50, 0.93);
+box-shadow:         3px 3px 11px rgba(50, 50, 50, 0.93);
+position: absolute;
+top: 100px !important;
+left: 190px !important;
+z-index: 20 !important;
+-moz-border-radius: 25px; /* firefox */
+-webkit-border-radius: 25px; /* safari, chrome */
+border-radius: 25px;
+width: 165px !important;
+height: 167px !important;
+cursor: pointer;
+}
+
+#imageContainer {text-align: center; height: 290px; position:relative;}
+.fullSize{position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 650px;}
+#backgroundContainerLeft{background: url('../images/background-left.gif') no-repeat bottom left;}
+#backgroundContainerRight{background: url('../images/background-right.gif') no-repeat bottom right;}
+
+.fb_login{
+cursor: pointer;
+height:50px; width: auto;
+-webkit-box-shadow: 3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-box-shadow:    3px 3px 11px rgba(50, 50, 50, 0.93);
+box-shadow:         3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-border-radius: 7px; /* firefox */
+-webkit-border-radius: 7px; /* safari, chrome */
+border-radius: 7px;
+}
+
+.fb-like{margin-right: 10px;}
+.twitter-share-button{margin-right: 10px;}
+
+/*-----------------------------------------------------ALBUM SELECTION-----------------------------------------------------*/
+
+.imageContainerAlbum{float: left; margin: 15px 15px 15px 15px; width: 150px; text-align: center;cursor: pointer;}
+.imageContainerPhoto{float: left; margin: 15px 15px 15px 15px; width: 100px; text-align: center;cursor: pointer;}
+.titleAlbum {height: 36px;}
+/*#clickYourAlbum{width: 280px; height: 18px; margin: auto; margin-top: 10px; text-align: center;
+	-webkit-box-shadow: 3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-box-shadow:    3px 3px 11px rgba(50, 50, 50, 0.93);
+box-shadow:         3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-border-radius: 7px; /* firefox 
+-webkit-border-radius: 7px; /* safari, chrome 
+border-radius: 7px;
+}*/
+
+.divCrop{ -moz-box-sizing: content-box; box-sizing: content-box; overflow: hidden; width: 150px; height: 150px; border: 3px solid transparent;
+-webkit-box-shadow: 3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-box-shadow:    3px 3px 11px rgba(50, 50, 50, 0.93);
+box-shadow:         3px 3px 11px rgba(50, 50, 50, 0.93);}
+.divCrop:hover { border: 3px solid Lightblue; }
+
+.divCropPhoto{ -moz-box-sizing: content-box; box-sizing: content-box; overflow: hidden; width: 100px; height: 100px; border: 3px solid transparent;
+-webkit-box-shadow: 3px 3px 11px rgba(50, 50, 50, 0.93);
+-moz-box-shadow:    3px 3px 11px rgba(50, 50, 50, 0.93);
+box-shadow:         3px 3px 11px rgba(50, 50, 50, 0.93);}
+.divCropPhoto:hover { border: 3px solid Lightblue; }
+
+.albumClicked{border: 3px solid yellow !important;}
+
+/*-----------------------------------------------------VIEW SHAPE-----------------------------------------------------*/
+
+.blackScreen{background-color: black; width: 100%; height: 100%; z-index: 10; position: fixed; top: 0px; left: 0px;}
+.imageBig{-ms-transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%);}
+.imageBig img {max-height: 450px;}
+.imageClosing{width: 30px; height: 30px; position: absolute; top: -15px; right: -15px; cursor: pointer;}
+.containerNoOpacityImage, .containerNoOpacityLoader{z-index: 11; position: fixed; height:50%;left:50%}
+.containerNoOpacityImage {top:50%;}
+.loader{width: auto; height: auto; display: block; position: relative; top: 40%;margin:auto; opacity: 0.8}
+#toolsShape{position:fixed;width: 100%;left:0;bottom:0; height: 70px; text-align: center; background-image:url("../images/bar.gif"); z-index:9;}
+.toolbarElement {height: 30px;cursor: pointer;margin: 18px 25px;float: left; background-image:url("../images/sprite_tools.png");}
+.shareButton {-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; height: 35px; cursor: pointer; float: left; padding: 3px;}
+.chooseShape{width: 50px; height: 50px; margin: 20px 20px 20px 20px; float: left; background-image:url("../images/sprite_shapes.png");}
+#gridContainer{
+	width: 100%;
+	height: 100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.gridElement{height: 100%; float:left; cursor: pointer;line-height: 100%;}
+.gridElementSelected{background-color: black;}
+.ui-dialog-content{overflow: auto !important;}
+
+.changeImageButton{width: 25px !important; height:25px !important; position: relative; right: 0px; bottom: 0px; opacity: 0.8; display: none; cursor: pointer;}
+.changeSizeImage{width: 80px; height: 40px; background-color: black; float: left; margin: 5px;}
+#share_tab {
+background-color: #666699;
+color:white;
+text-align:center;
+-moz-border-radius: 7px; /* firefox */
+-webkit-border-radius: 7px; /* safari, chrome */
+border-radius: 7px;
+z-index: 8;
+position: absolute;
+left: 5px;
+padding:5px;
+font-size:13px;
+}
+/*-----------------------------------------------------SOCIAL LINE GRADIENT-----------------------------------------------------*/
+
+#intro {
+	font-size:18px;
+    text-shadow:
+    -1px -1px 0 #ffffff,  
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
+	color:black;
+}
+
+html.ie7 #intro,
+html.ie8 #intro,
+html.ie9 #intro {
+    background-color: white;
+    filter: progid:DXImageTransform.Microsoft.Chroma(color='white') progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=1,offY=-1) progid:DXImageTransform.Microsoft.dropshadow(color=#ffffff,offX=-1,offY=-1);
+    zoom: 1;
+}
+
+.gradientLine{
+	width:100%;
+	float:right;
+	height:2px;
+	background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(161,166,198,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(161,166,198,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(161,166,198,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(161,166,198,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(161,166,198,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(161,166,198,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a1a6c6',GradientType=1 ); /* IE6-9 */
+}
+
+/*-----------------------------------------------------LANGUAGE SELECTOR-----------------------------------------------------*/
+#languageSelector {z-index: 5; position: absolute;}
+.desc { color:#6b6b6b;}
+.desc a {color:#0092dd;}
+
+.dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+.dropdown dd { position:relative; }
+.dropdown a, .dropdown a:visited { color:#816c5b; text-decoration:none; outline:none;}
+.dropdown a:hover { color:#5d4617;}
+.dropdown dt a:hover { color:#5d4617; border: 1px solid #d0c9af;}
+.dropdown dt a {background:#e4dfcb url(../images/flags/arrow.png) no-repeat scroll right center; display:block; padding-right:20px;
+                border:1px solid #d4ca9a; width:15px;}
+.dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+.dropdown dd ul { background:#e4dfcb none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
+                  left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:15px; list-style:none;}
+.dropdown span.value { display:none;}
+.dropdown dd ul li a { padding:5px; display:block;}
+.dropdown dd ul li a:hover { background-color:#d0c9af;}
+
+.dropdown img.flag { border:none; vertical-align:middle;}
+.flagvisibility { display:none;}
+
+.FB {height:420px !important;}
+
+#gear {position:relative; width: 100px; left: -210px; z-index: -1; top: -100px;}
+#tutorial {position:relative;width:345px; height:169px;}
+
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	box-shadow: 0 0 5px #aaa;
+}
+body .ui-tooltip {
+	border-width: 2px;
+}
+
+

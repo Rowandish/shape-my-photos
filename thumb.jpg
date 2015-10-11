@@ -1,0 +1,43 @@
+<?php
+// Define the path to file
+    /*require_once('AppInfo.php');
+    include_once(_SHAPE_YOUR_LIFE_DEFAULT_PATH.'/php/shape/shape_positioning.php');
+    include_once(_SHAPE_YOUR_LIFE_DEFAULT_PATH."/php/photos.php");
+    include_once(_SHAPE_YOUR_LIFE_DEFAULT_PATH."/php/savepage.php");
+    $id = $_GET["id"];
+    if (preg_match("/$[0-9]+r[0-9]+/", $id) === false)
+    {
+        require_once("./404.html");
+        exit();
+    }
+    $infos = SavePage::load($id);
+    $image = shaper::imageSave(json_decode($infos[0]["data"], true), json_decode($infos[0]["color"], true) , 0.5, imagick::FILTER_POINT, "jpeg");
+    $thumbnail = $image->getImageBlob();
+    $image->destroy();
+    header('Content-Type: image/jpeg');
+    header('Content-Length: ' . strlen($thumbnail));
+    die($thumbnail);*/
+    // Define the path to file
+    require_once('AppInfo.php');
+    include_once(_SHAPE_YOUR_LIFE_DEFAULT_PATH.'/php/shape/shape_positioning.php');
+    include_once(_SHAPE_YOUR_LIFE_DEFAULT_PATH."/php/photos.php");
+    include_once(_SHAPE_YOUR_LIFE_DEFAULT_PATH."/php/savepage.php");
+    $id = $_GET["id"];
+    if (preg_match("/$[0-9]+r[0-9]+/", $id) === false)
+    {
+        require_once("./404.html");
+        exit();
+    }
+    $infos = SavePage::load($id);
+    $infos[0]["data"] = json_decode($infos[0]["data"], true);
+    if ($infos[0]["new_method"] == "t")
+        $infos[0]["data"] = generateCSSShapeFormat($infos[0]["data"], 40, 40, 2);
+    $image = shaper::imageSave2($infos[0]["data"], json_decode($infos[0]["color"], true), false, 0.5, OpenCV\Image::INTER_LINEAR);
+    $tmp_name = "/tmp/tmp".time().rand().".jpg";
+    $image->save($tmp_name);
+    $stream = file_get_contents($tmp_name);
+    unlink($tmp_name);
+    header('Content-Type: image/jpeg');
+    header('Content-Length: ' . strlen($stream));
+    die($stream);
+?>

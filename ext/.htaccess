@@ -1,0 +1,4 @@
+<Directory  ~ "/app/www/ext">
+  Order allow,deny
+  Deny from all
+</Directory>
